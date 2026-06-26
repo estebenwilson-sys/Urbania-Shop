@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urbania | Official Shop</title>
+    <style>
+        /* Modern Minimalist Reset */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: #ffffff; color: #111111; -webkit-font-smoothing: antialiased; }
+        
+        /* Navigation Bar */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 5%; background: #ffffff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 26px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; cursor: default; }
+        .logo span { color: #00A3E0; } /* Sky Blue Accent in Logo */
+        .nav-links a { text-decoration: none; color: #111111; margin-left: 25px; font-weight: 500; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
+        .nav-links a:hover { color: #E4002B; } /* Red Accent on Hover */
+
+        /* Hero Section */
+        .hero { height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: #f8f9fa; border-bottom: 1px solid #f0f0f0; }
+        .hero h1 { font-size: 42px; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 12px; line-height: 1.1; }
+        .hero p { font-size: 15px; color: #666666; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 25px; }
+        .hero-btn { border: 2px solid #111111; color: #111111; padding: 12px 35px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s ease; }
+        .hero-btn:hover { background: #111111; color: #ffffff; }
+
+        /* Shop Section */
+        .shop-section { padding: 80px 5%; }
+        .section-title { font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px; text-align: center; position: relative; }
+        .section-title::after { content: ''; display: block; width: 40px; height: 2px; background: #00A3E0; margin: 10px auto 0 auto; } /* Sky Blue underline */
+        
+        /* Grid Blueprint */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        
+        /* Product Card */
+        .product-card { background: #ffffff; transition: opacity 0.3s ease; }
+        .product-image { width: 100%; height: 400px; background-color: #f7f7f7; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; position: relative; overflow: hidden; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .product-card:hover .product-image img { transform: scale(1.03); }
+        
+        .product-info { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+        .product-title { font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .product-price { font-size: 16px; color: #666666; font-weight: 500; }
+        
+        /* Minimalist Selector */
+        .size-select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #e0e0e0; background: #ffffff; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; outline: none; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><path d='M0 3l5 5 5-5z' fill='%23666666'/></svg>"); background-repeat: no-repeat; background-position: right 15px center; }
+        .size-select:focus { border-color: #00A3E0; } /* Changes to sky blue on click */
+        
+        /* Premium Buy Button */
+        .buy-btn { display: block; text-align: center; width: 100%; background: #E4002B; color: #ffffff; padding: 14px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background-color 0.2s ease; }
+        .buy-btn:hover { background: #b80022; } /* Darker red on hover */
+
+        /* Footer */
+        footer { background: #ffffff; border-top: 1px solid #f0f0f0; text-align: center; padding: 40px 20px; font-size: 12px; letter-spacing: 1px; color: #999999; text-transform: uppercase; margin-top: 100px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Urbania<span>.</span></div>
+        <div class="nav-links">
+            <a href="#shop">Shop</a>
+            <a href="mailto:support@urbaniashop.com">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Urbania Store</h1>
+        <p>Premium Custom Designs</p>
+        <a href="#shop" class="hero-btn">Drop One</a>
+    </header>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop-section">
+        <div class="section-title">The Collection</div>
+        
+        <div class="products-grid">
+            
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <!-- Standard placeholder image - we will replace this with your mockup later -->
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600" alt="Urbania Tee 1">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Urbania Classic Tee</h3>
+                    <div class="product-price">$30.00</div>
+                </div>
+                <select class="size-select">
+                    <option>Select Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>2XL</option>
+                </select>
+                <button class="buy-btn">Add To Cart</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600" alt="Urbania Tee 2">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Streetscape Graphic</h3>
+                    <div class="product-price">$30.00</div>
+                </div>
+                <select class="size-select">
+                    <option>Select Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>2XL</option>
+                </select>
+                <button class="buy-btn">Add To Cart</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600" alt="Urbania Tee 3">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Signature Series</h3>
+                    <div class="product-price">$30.00</div>
+                </div>
+                <select class="size-select">
+                    <option>Select Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>2XL</option>
+                </select>
+                <button class="buy-btn">Add To Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Urbania. Powered by Code.</p>
+    </footer>
+
+</body>
+</html>
