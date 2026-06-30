@@ -9,7 +9,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
         body { background-color: #ffffff; color: #111111; -webkit-font-smoothing: antialiased; }
 
-        /* Smooth Scrolling Announcement Ticker (ADDED STEP 2 HERE) */
+        /* Smooth Scrolling Announcement Ticker */
         .ticker-wrapper {
             width: 100%;
             background-color: #000000;
@@ -38,71 +38,61 @@
             0% { transform: translate3d(0, 0, 0); }
             100% { transform: translate3d(-50%, 0, 0); }
         }
+
+        /* Navigation Bar */ 
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 5%; background: #ffffff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 100; } 
+        .logo { font-size: 26px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; cursor: default; } 
+        .logo span { color: #00A3E0; } /* Sky Blue Accent in Logo */ 
+        .nav-links a { text-decoration: none; color: #111111; margin-left: 25px; font-weight: 500; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; } 
+        .nav-links a:hover { color: #E4002B; } /* Red Accent on Hover */ 
+        
+        /* Hero Section */ 
+        .hero { height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: #f8f9fa; border-bottom: 1px solid #f0f0f0; } 
+        .hero h1 { font-size: 42px; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 12px; line-height: 1.1; } 
+        .hero p { font-size: 15px; color: #666666; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 25px; } 
+        .hero-btn { border: 2px solid #111111; color: #111111; padding: 12px 35px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s ease; } 
+        .hero-btn:hover { background: #111111; color: #ffffff; } 
+        
+        /* Shop Section */ 
+        .shop-section { padding: 80px 5%; } 
+        .section-title { font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px; text-align: center; position: relative; } 
+        .section-title::after { content: ''; display: block; width: 40px; height: 2px; background: #00A3E0; margin: 10px auto 0 auto; } /* Sky Blue underline */ 
+        
+        /* Grid Blueprint */ 
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; } 
+        
+        /* Product Card */ 
+        .product-card { background: #ffffff; transition: opacity 0.3s ease; } 
+        .product-image { width: 100%; height: 400px; background-color: #f7f7f7; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; position: relative; overflow: hidden; } 
+        .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; } 
+        .product-card:hover .product-image img { transform: scale(1.03); } 
+        .product-info { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; } 
+        .product-title { font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; } 
+        .product-price { font-size: 16px; color: #666666; font-weight: 500; } 
+        
+        /* Minimalist Selector */ 
+        .size-select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #e0e0e0; background: #ffffff; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; outline: none; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,"); background-repeat: no-repeat; background-position: right 15px center; } 
+        .size-select:focus { border-color: #00A3E0; } /* Changes to sky blue on click */ 
+        
+        /* Premium Buy Button */ 
+        .buy-btn { display: block; text-align: center; width: 100%; background: #E4002B; color: #ffffff; padding: 14px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background-color 0.2s ease; } 
+        .buy-btn:hover { background: #b80022; } /* Darker red on hover */ 
+        
+        /* Footer */ 
+        footer { background: #ffffff; border-top: 1px solid #f0f0f0; text-align: center; padding: 40px 20px; font-size: 12px; letter-spacing: 1px; color: #999999; text-transform: uppercase; margin-top: 100px; }
     </style>
 </head>
 <body>
-    <!-- Moving Announcement Banner (ADDED STEP 1 HERE) -->
+    <!-- Moving Announcement Banner -->
     <div class="ticker-wrapper">
         <div class="ticker-text">
             <span>⚠️ SITE UNDER CONSTRUCTION / SITIO EN CONSTRUCCIÓN ⚠️ — EXPERIENCING CONTINUOUS UPDATES — CHOOSE ZIP CODE 00731 OR 00716 VIA EMAIL AFTER PURCHASE — URBANIA PR 🇵🇷</span>
             <span>⚠️ SITE UNDER CONSTRUCTION / SITIO EN CONSTRUCCIÓN ⚠️ — EXPERIENCING CONTINUOUS UPDATES — CHOOSE ZIP CODE 00731 OR 00716 VIA EMAIL AFTER PURCHASE — URBANIA PR 🇵🇷</span>
         </div>
     </div>
-        
-        /* Navigation Bar */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 5%; background: #ffffff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 100; }
-        .logo { font-size: 26px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; cursor: default; }
-        .logo span { color: #00A3E0; } /* Sky Blue Accent in Logo */
-        .nav-links a { text-decoration: none; color: #111111; margin-left: 25px; font-weight: 500; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
-        .nav-links a:hover { color: #E4002B; } /* Red Accent on Hover */
 
-        /* Hero Section */
-        .hero { height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: #f8f9fa; border-bottom: 1px solid #f0f0f0; }
-        .hero h1 { font-size: 42px; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 12px; line-height: 1.1; }
-        .hero p { font-size: 15px; color: #666666; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 25px; }
-        .hero-btn { border: 2px solid #111111; color: #111111; padding: 12px 35px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s ease; }
-        .hero-btn:hover { background: #111111; color: #ffffff; }
-
-        /* Shop Section */
-        .shop-section { padding: 80px 5%; }
-        .section-title { font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px; text-align: center; position: relative; }
-        .section-title::after { content: ''; display: block; width: 40px; height: 2px; background: #00A3E0; margin: 10px auto 0 auto; } /* Sky Blue underline */
-        
-        /* Grid Blueprint */
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        
-        /* Product Card */
-        .product-card { background: #ffffff; transition: opacity 0.3s ease; }
-        .product-image { width: 100%; height: 400px; background-color: #f7f7f7; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; position: relative; overflow: hidden; }
-        .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-        .product-card:hover .product-image img { transform: scale(1.03); }
-        
-        .product-info { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
-        .product-title { font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-        .product-price { font-size: 16px; color: #666666; font-weight: 500; }
-        
-        /* Minimalist Selector */
-        .size-select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #e0e0e0; background: #ffffff; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; outline: none; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><path d='M0 3l5 5 5-5z' fill='%23666666'/></svg>"); background-repeat: no-repeat; background-position: right 15px center; }
-        .size-select:focus { border-color: #00A3E0; } /* Changes to sky blue on click */
-        
-        /* Premium Buy Button */
-        .buy-btn { display: block; text-align: center; width: 100%; background: #E4002B; color: #ffffff; padding: 14px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background-color 0.2s ease; }
-        .buy-btn:hover { background: #b80022; } /* Darker red on hover */
-
-        /* Footer */
-        footer { background: #ffffff; border-top: 1px solid #f0f0f0; text-align: center; padding: 40px 20px; font-size: 12px; letter-spacing: 1px; color: #999999; text-transform: uppercase; margin-top: 100px; }
-    </style>
-</head>
-<body>
-
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav>
-      <div class="logo"><img src="Urbanialogo1.jpg" alt="Urbania Logo" style="height: 100px; width: auto; display: block;padding: 5px 0"></div>
-        <div class="nav-links">
-            <a href="#shop">Shop</a>
-            <a href="mailto:support@urbaniashop.com">Contact</a>
-        </div>
-    </nav>
 
  <!-- Responsive Hero Section -->
   <style>
