@@ -43,8 +43,8 @@
 
         /* Navigation Bar */ 
         nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 5%; background: #ffffff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 38px; z-index: 100; } 
-        .logo { font-size: 26px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; cursor: default; } 
-        .logo span { color: #00A3E0; } 
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 45px; width: auto; object-fit: contain; }
         .nav-links a { text-decoration: none; color: #111111; margin-left: 25px; font-weight: 500; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; } 
         .nav-links a:hover { color: #E4002B; } 
         
@@ -123,10 +123,11 @@
     </div>
 
     <nav>
-        <div class="logo">URBANIA<span>PR</span></div>
+       <div class="logo">
+            <img src="Urbanialogo1.jpg" alt="Urbania PR Logo">
+        </div>
         <div class="nav-links">
             <a href="#shop">Shop</a>
-            <a href="#contact">Contact</a>
         </div>
     </nav>
 
