@@ -43,7 +43,7 @@
 
         /* Navigation Bar */ 
         nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 5%; background: #ffffff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 38px; z-index: 100; } 
-       .logo { display: flex; align-items: center; }
+        .logo { display: flex; align-items: center; }
         .logo img { height: 70px; width: auto; object-fit: contain; }
         .nav-links a { text-decoration: none; color: #111111; margin-left: 25px; font-weight: 500; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; } 
         .nav-links a:hover { color: #E4002B; } 
@@ -57,7 +57,7 @@
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; } 
         
         /* Product Card */ 
-        .product-card { background: #ffffff; transition: opacity 0.3s ease; } 
+        .product-card { background: #ffffff; transition: opacity 0.3s ease; display: flex; flex-direction: column; justify-content: flex-end; } 
         .product-image { width: 100%; height: 400px; background-color: #f7f7f7; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; position: relative; overflow: hidden; } 
         .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; } 
         .product-card:hover .product-image img { transform: scale(1.03); } 
@@ -70,7 +70,7 @@
         .size-select:focus { border-color: #00A3E0; } 
         
         /* Premium Buy Button */ 
-        .buy-btn { display: block; text-align: center; width: 100%; background: #E4002B; color: #ffffff; padding: 14px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background-color 0.2s ease; } 
+        .buy-btn { display: block; text-align: center; width: 100%; background: #E4002B; color: #ffffff; padding: 14px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background-color 0.2s ease; margin-top: auto; } 
         .buy-btn:hover { background: #b80022; } 
         
         /* Footer */ 
@@ -117,8 +117,8 @@
 <body>
     <div class="ticker-wrapper">
         <div class="ticker-text">
-            <span>⚠️ SITE UNDER CONSTRUCTION / SITIO EN CONSTRUCCIÓN ⚠️ — EXPERIENCING CONTINUOUS UPDATES — CHOOSE ZIP CODE 00731 OR 00716 VIA EMAIL AFTER PURCHASE — URBANIA PR 🇵🇷</span>
-            <span>⚠️ SITE UNDER CONSTRUCTION / SITIO EN CONSTRUCCIÓN ⚠️ — EXPERIENCING CONTINUOUS UPDATES — CHOOSE ZIP CODE 00731 OR 00716 VIA EMAIL AFTER PURCHASE — URBANIA PR 🇵🇷</span>
+            <span>⚠️ SITE UNDER CONSTRUCTION / SITIO EN CONSTRUCCIÓN ⚠️ — EXPERIENCING CONTINUOUS UPDATES — NEW PREMIUM APPAREL DROPPING SOON — URBANIA PR 🇵🇷</span>
+            <span>⚠️ SITE UNDER CONSTRUCTION / SITIO EN CONSTRUCCIÓN ⚠️ — EXPERIENCING CONTINUOUS UPDATES — NEW PREMIUM APPAREL DROPPING SOON — URBANIA PR 🇵🇷</span>
         </div>
     </div>
 
@@ -144,67 +144,48 @@
         
         <div class="products-grid">
             
+            <!-- CARD 1: HOODIE REVOLUTION - 00716 EDITION -->
             <div class="product-card">
                 <div class="product-image">
-                    <img id="main-product-img-1" src="Gemini_Generated_Image_1yk3lr1yk3lr1yk3.png" alt="Urbania hoodie 1">
+                    <img id="main-product-img-716" src="Gemini_Generated_Image_1yk3lr1yk3lr1yk3.png" alt="Urbania hoodie 00716">
                 </div>
                 
-                <div class="product-gallery-thumbnails" style="display: flex; gap: 6px; justify-content: center; margin: 10px 0; padding: 0 5px; flex-wrap: wrap;">
-                    <img src="Gemini_Generated_Image_1yk3lr1yk3lr1yk3.png" alt="View 1" 
-                         style="width: 45px; height: 45px; object-fit: cover; border: 1px solid #fff; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-1').src=this.src">
-                    
-                    <img src="Gemini_Generated_Image_5suksy5suksy5suk.png" alt="View 2" 
-                         style="width: 45px; height: 45px; object-fit: cover; border: 1px solid #444; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-1').src=this.src">
-                    
-                    <img src="Gemini_Generated_Image_bnlaw7bnlaw7bnla.png" alt="View 3" 
-                         style="width: 45px; height: 45px; object-fit: cover; border: 1px solid #444; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-1').src=this.src">
-
-                    <img src="Gemini_Generated_Image_ldx0cfldx0cfldx0.png" alt="View 4" 
-                         style="width: 45px; height: 45px; object-fit: cover; border: 1px solid #444; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-1').src=this.src">
-
-                    <img src="Gemini_Generated_Image_sizt4sizt4sizt4s.png" alt="View 5" 
-                         style="width: 45px; height: 45px; object-fit: cover; border: 1px solid #444; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-1').src=this.src">
-
-                    <img src="Gemini_Generated_Image_xhhfx6xhhfx6xhhf.png" alt="View 6" 
-                         style="width: 45px; height: 45px; object-fit: cover; border: 1px solid #444; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-1').src=this.src">
-                </div>
-
                 <div class="product-info">
-                    <h3 class="product-title">Urbania Classic hoodie</h3>
-                    <div class="product-price">$40.00</div>
-                </div>
-               <select class="size-select">
-                    <option>Select Size</option>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                    <option>2XL</option>
-                </select>
-
-                <div class="product-description" style="text-align: left; margin: 20px 10px 10px 10px; color: #000000; font-size: 0.95rem; line-height: 1.6; font-family: sans-serif;">
-                    <p style="margin-bottom: 12px; color: #000000; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Descripción del producto:</p>
-                    <p style="margin-bottom: 15px;">
-                        Lleva la esencia de la Ciudad Señorial con nuestro exclusivo **Hoodie de la Cruceta del Vigía en Ponce**. Este hoodie urbano combina el estilo streetwear de Puerto Rico con el orgullo sureño, destacando la cultura urbana e icónica de la isla. Diseñado con materiales premium para máxima comodidad y durabilidad.
-                    </p>
-                    
-                    <div style="background-color: #f5f5f5; border-left: 3px solid #000000; padding: 12px; margin-top: 15px; border-radius: 4px;">
-                        <span style="color: #000000; font-weight: bold; display: block; margin-bottom: 5px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">⚠️ NOTA IMPORTANTE PARA TU ORDEN:</span>
-                        <p style="margin: 0; font-size: 0.9rem; color: #111111;">
-                            Este diseño está disponible con los códigos postales **00731** o **00716**. Al completar tu compra, por favor envíanos un correo electrónico con tu <strong>número de orden</strong> especificando cuál de los dos Zip Codes prefieres para tu hoodie.
-                        </p>
-                    </div>
+                    <h3 class="product-title">Urbania Hoodie (00716 Edition)</h3>
+                    <div class="product-price">$75.00</div>
                 </div>
 
-                <button class="buy-btn">Add To Cart</button>
+                <div class="product-description" style="text-align: left; margin: 0 10px 20px 10px; color: #111111; font-size: 0.9rem; line-height: 1.5; font-family: sans-serif;">
+                    <p style="margin-bottom: 6px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Descripción:</p>
+                    <p>Lleva la esencia de la Ciudad Señorial con nuestro Hoodie urbano **00716 Edition**. Silueta streetwear holgada y estructurada de 10oz fabricada para durar.</p>
+                </div>
+
+                <!-- Link to your Printify 00716 live product page -->
+                <a href="#" target="_blank" class="buy-btn">Select Size & Buy</a>
+            </div>
+
+            <!-- CARD 2: HOODIE REVOLUTION - 00731 EDITION -->
+            <div class="product-card">
+                <div class="product-image">
+                    <!-- Swap this img src out with your specific 00731 custom design graphic mockup asset -->
+                    <img id="main-product-img-731" src="Gemini_Generated_Image_1yk3lr1yk3lr1yk3.png" alt="Urbania hoodie 00731">
+                </div>
+                
+                <div class="product-info">
+                    <h3 class="product-title">Urbania Hoodie (00731 Edition)</h3>
+                    <div class="product-price">$75.00</div>
+                </div>
+
+                <div class="product-description" style="text-align: left; margin: 0 10px 20px 10px; color: #111111; font-size: 0.9rem; line-height: 1.5; font-family: sans-serif;">
+                    <p style="margin-bottom: 6px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Descripción:</p>
+                    <p>Representa a tu región con el exclusivo **00731 Edition**. Diseñado con materiales ultra-heavyweight premium premium para una caída perfecta del fit boxy.</p>
+                </div>
+
+                <!-- Link to your Printify 00731 live product page -->
+                <a href="#" target="_blank" class="buy-btn">Select Size & Buy</a>
             </div>
             
+            <!-- CARD 3: ORIGINAL GRAPHIC TEE -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600" alt="Urbania Tee 2">
@@ -224,6 +205,7 @@
                 <button class="buy-btn">Add To Cart</button>
             </div>
 
+            <!-- CARD 4: ORIGINAL GRAPHIC TEE -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600" alt="Urbania Tee 3">
