@@ -3,269 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urbania PR | Official Shop</title>
+    <title>Urbania | Official Shop</title>
     <style>
         /* Modern Minimalist Reset */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: #ffffff; color: #111111; -webkit-font-smoothing: antialiased; padding-top: 38px; }
+        body { background-color: #ffffff; color: #111111; -webkit-font-smoothing: antialiased; }
+        
+        /* Navigation Bar */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 5%; background: #ffffff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 26px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; cursor: default; }
+        .logo span { color: #00A3E0; } /* Sky Blue Accent in Logo */
+        .nav-links a { text-decoration: none; color: #111111; margin-left: 25px; font-weight: 500; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
+        .nav-links a:hover { color: #E4002B; } /* Red Accent on Hover */
 
-        /* Smooth Scrolling Announcement Ticker */
-        .ticker-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            background-color: #000000;
-            border-bottom: 1px solid #333333;
-            overflow: hidden;
-            padding: 10px 0;
-            z-index: 99999;
-        }
-        .ticker-text {
-            display: flex;
-            width: max-content;
-            animation: tickerLoop 25s linear infinite;
-        }
-        .ticker-text span {
-            color: #ffffff;
-            font-family: sans-serif;
-            font-size: 0.85rem;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            padding-right: 50px;
-            white-space: nowrap;
-        }
-        @keyframes tickerLoop {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(-50%, 0, 0); }
-        }
+        /* Hero Section */
+        .hero { height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: #f8f9fa; border-bottom: 1px solid #f0f0f0; }
+        .hero h1 { font-size: 42px; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 12px; line-height: 1.1; }
+        .hero p { font-size: 15px; color: #666666; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 25px; }
+        .hero-btn { border: 2px solid #111111; color: #111111; padding: 12px 35px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s ease; }
+        .hero-btn:hover { background: #111111; color: #ffffff; }
 
-        /* Navigation Bar */ 
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 5%; background: #ffffff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 38px; z-index: 100; } 
-        .logo { display: flex; align-items: center; }
-        .logo img { height: 70px; width: auto; object-fit: contain; }
-        .nav-links a { text-decoration: none; color: #111111; margin-left: 25px; font-weight: 500; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; } 
-        .nav-links a:hover { color: #E4002B; } 
+        /* Shop Section */
+        .shop-section { padding: 80px 5%; }
+        .section-title { font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px; text-align: center; position: relative; }
+        .section-title::after { content: ''; display: block; width: 40px; height: 2px; background: #00A3E0; margin: 10px auto 0 auto; } /* Sky Blue underline */
         
-        /* Shop Section */ 
-        .shop-section { padding: 80px 5%; } 
-        .section-title { font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px; text-align: center; position: relative; } 
-        .section-title::after { content: ''; display: block; width: 40px; height: 2px; background: #00A3E0; margin: 10px auto 0 auto; } 
+        /* Grid Blueprint */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         
-        /* Grid Blueprint */ 
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; } 
+        /* Product Card */
+        .product-card { background: #ffffff; transition: opacity 0.3s ease; }
+        .product-image { width: 100%; height: 400px; background-color: #f7f7f7; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; position: relative; overflow: hidden; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .product-card:hover .product-image img { transform: scale(1.03); }
         
-        /* Product Card */ 
-        .product-card { background: #ffffff; transition: opacity 0.3s ease; display: flex; flex-direction: column; justify-content: flex-end; } 
-        .product-image { width: 100%; height: 400px; background-color: #f7f7f7; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; position: relative; overflow: hidden; } 
-        .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; } 
-        .product-card:hover .product-image img { transform: scale(1.03); } 
-        .product-info { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; } 
-        .product-title { font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; } 
-        .product-price { font-size: 16px; color: #666666; font-weight: 500; } 
+        .product-info { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+        .product-title { font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .product-price { font-size: 16px; color: #666666; font-weight: 500; }
         
-        /* Minimalist Selector */ 
-        .size-select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #e0e0e0; background: #ffffff; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; outline: none; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,"); background-repeat: no-repeat; background-position: right 15px center; } 
-        .size-select:focus { border-color: #00A3E0; } 
+        /* Minimalist Selector */
+        .size-select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #e0e0e0; background: #ffffff; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; outline: none; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><path d='M0 3l5 5 5-5z' fill='%23666666'/></svg>"); background-repeat: no-repeat; background-position: right 15px center; }
+        .size-select:focus { border-color: #00A3E0; } /* Changes to sky blue on click */
         
-        /* Premium Buy Button */ 
-        .buy-btn { display: block; text-align: center; width: 100%; background: #E4002B; color: #ffffff; padding: 14px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background-color 0.2s ease; margin-top: auto; } 
-        .buy-btn:hover { background: #b80022; } 
-        
-        /* Footer */ 
+        /* Premium Buy Button */
+        .buy-btn { display: block; text-align: center; width: 100%; background: #E4002B; color: #ffffff; padding: 14px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background-color 0.2s ease; }
+        .buy-btn:hover { background: #b80022; } /* Darker red on hover */
+
+        /* Paypal Button Wrapper Styling */
+        .paypal-button-wrapper { margin-top: 15px; width: 100%; }
+
+        /* Footer */
         footer { background: #ffffff; border-top: 1px solid #f0f0f0; text-align: center; padding: 40px 20px; font-size: 12px; letter-spacing: 1px; color: #999999; text-transform: uppercase; margin-top: 100px; }
-
-        /* Responsive Hero Section */
-        .hero {
-            background-color: #000000;
-            min-height: 60vh; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('HeroBanner.png') no-repeat center top/100% auto;
-            background-color: #000000;
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            padding: 0 20px;
-        }
-        @media (max-width: 768px) {
-            .hero {
-                min-height: 35vh;
-            }
-            .hero-bg {
-                background-size: 100% 100%;
-                background-position: center center;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="ticker-wrapper">
-        <div class="ticker-text">
-            <span>⚠️ SITE UNDER CONSTRUCTION / SITIO EN CONSTRUCCIÓN ⚠️ — EXPERIENCING CONTINUOUS UPDATES — NEW PREMIUM APPAREL DROPPING SOON — URBANIA PR 🇵🇷</span>
-            <span>⚠️ SITE UNDER CONSTRUCTION / SITIO EN CONSTRUCCIÓN ⚠️ — EXPERIENCING CONTINUOUS UPDATES — NEW PREMIUM APPAREL DROPPING SOON — URBANIA PR 🇵🇷</span>
-        </div>
-    </div>
 
+    <!-- Navigation -->
     <nav>
-       <div class="logo">
-            <img src="Urbanialogo1.jpg" alt="Urbania PR Logo">
-        </div>
+        <div class="logo">Urbania<span>.</span></div>
         <div class="nav-links">
             <a href="#shop">Shop</a>
+            <a href="mailto:support@urbaniashop.com">Contact</a>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content" style="width: 100%; max-width: 800px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; text-align: center;">
-            <h1 style="font-size: 3.5rem; text-transform: uppercase; letter-spacing: 2px; color: #ffffff; margin: 0; text-align: center;">Urbania PR</h1>
-            <p style="font-size: 1.5rem; margin-top: 12px; color: #ffffff; font-weight: 300; letter-spacing: 1px; text-align: center;">La esencia de tu isla</p>
-        </div>
-    </section>
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Urbania Store</h1>
+        <p>Premium Custom Designs</p>
+        <a href="#shop" class="hero-btn">Drop One</a>
+    </header>
 
+    <!-- Shop Section -->
     <section id="shop" class="shop-section">
         <div class="section-title">The Collection</div>
         
         <div class="products-grid">
             
-           <!-- CARD 1: HOODIE REVOLUTION - 00716 EDITION -->
+            <!-- Product 1 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img id="main-product-img-716" src="Gemini_Generated_Image_1yk3lr1yk3lr1yk3.png" alt="Urbania hoodie 00716">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600" alt="Urbania Tee 1">
                 </div>
-                
-                <!-- MINI MOCKUP GALLERY FOR 00716 -->
-                <div class="product-gallery-thumbnails" style="display: flex; gap: 8px; justify-content: center; margin: -10px 0 20px 0; padding: 0 5px;">
-                    <!-- View 1 -->
-                    <img src="Gemini_Generated_Image_1yk3lr1yk3lr1yk3.png" alt="00716 Front View" 
-                         style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #111; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-716').src=this.src">
-                    
-                    <!-- View 2 -->
-                    <img src="Gemini_Generated_Image_xhhfx6xhhfx6xhhf.png" alt="00716 Alternate View" 
-                         style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-716').src=this.src">
-                </div>
-                
                 <div class="product-info">
-                    <h3 class="product-title">Urbania Hoodie (00716 Edition)</h3>
-                    <div class="product-price">$50.00 - $53.00</div>
+                    <h3 class="product-title">Urbania Classic Tee</h3>
+                    <div class="product-price">$30.00</div>
                 </div>
-
-                <div class="product-description" style="text-align: left; margin: 0 10px 20px 10px; color: #111111; font-size: 0.9rem; line-height: 1.5; font-family: sans-serif;">
-                    <p style="margin-bottom: 6px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Descripción:</p>
-                    <p>Lleva la esencia de la Ciudad Señorial con nuestro Hoodie urbano **00716 Edition**. Silueta streetwear holgada y estructurada de 10oz fabricada para durar.</p>
-                </div>
-
-                <a href="https://urbaniapr.printify.me/product/30211969" target="_blank" class="buy-btn">Select Size & Buy</a>
+                <select class="size-select">
+                    <option>Select Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>2XL</option>
+                </select>
+                <button class="buy-btn">Add To Cart</button>
             </div>
 
-            <!-- CARD 2: HOODIE REVOLUTION - 00731 EDITION -->
+            <!-- Product 2 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img id="main-product-img-731" src="Gemini_Generated_Image_ldx0cfldx0cfldx0.png" alt="Urbania hoodie 00731">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600" alt="Urbania Tee 2">
                 </div>
-                
-                <!-- MINI MOCKUP GALLERY FOR 00731 -->
-                <div class="product-gallery-thumbnails" style="display: flex; gap: 8px; justify-content: center; margin: -10px 0 20px 0; padding: 0 5px; flex-wrap: wrap;">
-                    <img src="Gemini_Generated_Image_ldx0cfldx0cfldx0.png" alt="00731 View 1" 
-                         style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #111; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-731').src=this.src">
-
-                    <img src="Gemini_Generated_Image_htmxgdhtmxgdhtmx.png" alt="00731 View 2" 
-                         style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-731').src=this.src">
-
-                    <img src="Gemini_Generated_Image_c2dobjc2dobjc2do.png" alt="00731 View 3" 
-                         style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-731').src=this.src">
-                </div>
-                
                 <div class="product-info">
-                    <h3 class="product-title">Urbania Hoodie (00731 Edition)</h3>
-                    <div class="product-price">$50.00 - $53.00</div>
+                    <h3 class="product-title">Streetscape Graphic</h3>
+                    <div class="product-price">$30.00</div>
                 </div>
-
-                <div class="product-description" style="text-align: left; margin: 0 10px 20px 10px; color: #111111; font-size: 0.9rem; line-height: 1.5; font-family: sans-serif;">
-                    <p style="margin-bottom: 6px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Descripción:</p>
-                    <p>Representa a tu región con el exclusivo **00731 Edition**. Diseñado con materiales ultra-heavyweight premium para una caída perfecta del fit boxy.</p>
-                </div>
-
-                <a href="https://urbaniapr.printify.me/product/30211972" target="_blank" class="buy-btn">Select Size & Buy</a>
+                <select class="size-select">
+                    <option>Select Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>2XL</option>
+                </select>
+                <button class="buy-btn">Add To Cart</button>
             </div>
 
-            <!-- CARD 3: SNOW WASHED OVERSIZED TEE - PONCE 00731 EDITION -->
+            <!-- Product 3 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img id="main-product-img-snow-wash" src="Gemini_Generated_Image_12xojg12xojg12xo.png" alt="Snow Washed Oversized Tee Ponce 00731">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600" alt="Urbania Tee 3">
                 </div>
-                
-                <!-- MINI MOCKUP GALLERY FOR SNOW WASH TEE (Light Brown, Black, Apricot) -->
-                <div class="product-gallery-thumbnails" style="display: flex; gap: 6px; justify-content: center; margin: -10px 0 20px 0; padding: 0 5px; flex-wrap: wrap;">
-                    <!-- Light Brown Views -->
-                    <img src="Gemini_Generated_Image_12xojg12xojg12xo.png" alt="Light Brown View 1" 
-                         style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #111; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
-                    <img src="Ponce-OS5.png" alt="Light Brown View 2" 
-                         style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
-                    <img src="Gemini_Generated_Image_plcpc7plcpc7plcp.png" alt="Light Brown View 3" 
-                         style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
-                    <img src="Gemini_Generated_Image_pg3nqdpg3nqdpg3n.png" alt="Light Brown View 4" 
-                         style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
-                    
-                    <!-- Black Views -->
-                    <img src="Gemini_Generated_Image_1dqbol1dqbol1dqb.png" alt="Black View 1" 
-                         style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
-                    <img src="Gemini_Generated_Image_eliycheliycheliy.png" alt="Black View 2" 
-                         style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
-                    <img src="Ponce-OS3.png" alt="Black View 3" 
-                         style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
-
-                    <!-- Apricot Views -->
-                    <img src="Ponce-OS4.png" alt="Apricot View 1" 
-                         style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
-                    <img src="Gemini_Generated_Image_7xvury7xvury7xvu.png" alt="Apricot View 2" 
-                         style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
-                    <img src="Gemini_Generated_Image_xpuyb6xpuyb6xpuy.png" alt="Apricot View 3" 
-                         style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
-                         onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
-                </div>
-                
                 <div class="product-info">
-                    <h3 class="product-title">Ponce 00731 Snow Washed Oversized Tee</h3>
-                    <div class="product-price">$25.00 – $28.00</div>
+                    <h3 class="product-title">Signature Series</h3>
+                    <div class="product-price">$30.00</div>
                 </div>
+                <select class="size-select">
+                    <option>Select Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>2XL</option>
+                </select>
+                <button class="buy-btn">Add To Cart</button>
+            </div>
 
-                <div class="product-description" style="text-align: left; margin: 0 10px 20px 10px; color: #111111; font-size: 0.9rem; line-height: 1.5; font-family: sans-serif;">
-                    <p style="margin-bottom: 6px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Descripción:</p>
-                    <p>Eleva tu estilo con esta camiseta oversized confeccionada en algodón de alto gramaje (250 GSM). Con un lavado vintage estilo snow wash y un corte holgado, aporta una vibra urbana, desgastada y audaz a tu guardarropa. Un diseño exclusivo con el sello **Ponce 00731** llevado al siguiente nivel.</p>
+            <!-- Product 4 (PayPal Hosted Button Integrated) -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600" alt="Urbania Product 4">
                 </div>
-
-                <a href="#shop" class="buy-btn">Select Size & Buy</a>
+                <div class="product-info">
+                    <h3 class="product-title">Urbania Drop #4</h3>
+                    <div class="product-price">$25.00 - $28.00</div>
+                </div>
+                
+                <!-- PayPal Button Container & Render Script -->
+                <div class="paypal-button-wrapper">
+                    <div id="paypal-container-H6FFLWEXDYSK2"></div>
+                    <script>
+                      paypal.HostedButtons({
+                        hostedButtonId: "H6FFLWEXDYSK2",
+                      }).render("#paypal-container-H6FFLWEXDYSK2");
+                    </script>
+                </div>
             </div>
 
         </div>
@@ -274,6 +167,11 @@
     <footer>
         <p>&copy; 2026 Urbania. Powered by Code.</p>
     </footer>
+
+    <!-- PayPal SDK Script (Placed at bottom for fast page loads) -->
+    <script 
+      src="https://www.paypal.com/sdk/js?client-id=BAAzUuDm08yPgTjtTiRyglVke-WtfnccvqWyYqrH00QA8oCu-YBT62LZP5HKBwfnksXVSshsavMzT2hU1M&components=hosted-buttons&enable-funding=venmo&currency=USD">
+    </script>
 
 </body>
 </html>
