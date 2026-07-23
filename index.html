@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Urbania PR | Official Shop</title>
+
+    <!-- PayPal SDK Script loaded here to prevent execution errors -->
+    <script 
+      src="https://www.paypal.com/sdk/js?client-id=BAAzUuDm08yPgTjtTiRyglVke-WtfnccvqWyYqrH00QA8oCu-YBT62LZP5HKBwfnksXVSshsavMzT2hU1M&components=hosted-buttons&enable-funding=venmo&currency=USD">
+    </script>
+
     <style>
         /* Modern Minimalist Reset */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -74,7 +80,7 @@
         .buy-btn:hover { background: #b80022; } 
         
         /* Paypal Button Wrapper Styling */
-        .paypal-button-wrapper { margin-top: auto; padding: 0 10px; width: 100%; }
+        .paypal-button-wrapper { margin-top: auto; padding: 0 10px; width: 100%; min-height: 150px; }
 
         /* Footer */ 
         footer { background: #ffffff; border-top: 1px solid #f0f0f0; text-align: center; padding: 40px 20px; font-size: 12px; letter-spacing: 1px; color: #999999; text-transform: uppercase; margin-top: 100px; }
@@ -155,12 +161,10 @@
                 
                 <!-- MINI MOCKUP GALLERY FOR 00716 -->
                 <div class="product-gallery-thumbnails" style="display: flex; gap: 8px; justify-content: center; margin: -10px 0 20px 0; padding: 0 5px;">
-                    <!-- View 1 -->
                     <img src="Gemini_Generated_Image_1yk3lr1yk3lr1yk3.png" alt="00716 Front View" 
                          style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #111; cursor: pointer; border-radius: 4px;" 
                          onclick="document.getElementById('main-product-img-716').src=this.src">
                     
-                    <!-- View 2 -->
                     <img src="Gemini_Generated_Image_xhhfx6xhhfx6xhhf.png" alt="00716 Alternate View" 
                          style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
                          onclick="document.getElementById('main-product-img-716').src=this.src">
@@ -213,15 +217,14 @@
                 <a href="https://urbaniapr.printify.me/product/30211972" target="_blank" class="buy-btn">Select Size & Buy</a>
             </div>
 
-            <!-- CARD 3: SNOW WASHED OVERSIZED TEE - PONCE 00731 EDITION (INTEGRATED WITH PAYPAL) -->
+            <!-- CARD 3: SNOW WASHED OVERSIZED TEE - PONCE 00731 EDITION -->
             <div class="product-card">
                 <div class="product-image">
                     <img id="main-product-img-snow-wash" src="Gemini_Generated_Image_12xojg12xojg12xo.png" alt="Snow Washed Oversized Tee Ponce 00731">
                 </div>
                 
-                <!-- MINI MOCKUP GALLERY FOR SNOW WASH TEE (Light Brown, Black, Apricot) -->
+                <!-- MINI MOCKUP GALLERY FOR SNOW WASH TEE -->
                 <div class="product-gallery-thumbnails" style="display: flex; gap: 6px; justify-content: center; margin: -10px 0 20px 0; padding: 0 5px; flex-wrap: wrap;">
-                    <!-- Light Brown Views -->
                     <img src="Gemini_Generated_Image_12xojg12xojg12xo.png" alt="Light Brown View 1" 
                          style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #111; cursor: pointer; border-radius: 4px;" 
                          onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
@@ -235,7 +238,6 @@
                          style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
                          onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
                     
-                    <!-- Black Views -->
                     <img src="Gemini_Generated_Image_1dqbol1dqbol1dqb.png" alt="Black View 1" 
                          style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
                          onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
@@ -246,7 +248,6 @@
                          style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
                          onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
 
-                    <!-- Apricot Views -->
                     <img src="Ponce-OS4.png" alt="Apricot View 1" 
                          style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #e0e0e0; cursor: pointer; border-radius: 4px;" 
                          onclick="document.getElementById('main-product-img-snow-wash').src=this.src">
@@ -268,13 +269,20 @@
                     <p>Eleva tu estilo con esta camiseta oversized confeccionada en algodón de alto gramaje (250 GSM). Con un lavado vintage estilo snow wash y un corte holgado, aporta una vibra urbana, desgastada y audaz a tu guardarropa. Un diseño exclusivo con el sello **Ponce 00731** llevado al siguiente nivel.</p>
                 </div>
 
-                <!-- PayPal Button Render Container -->
+                <!-- Safe PayPal Button Container -->
                 <div class="paypal-button-wrapper">
                     <div id="paypal-container-H6FFLWEXDYSK2"></div>
                     <script>
-                      paypal.HostedButtons({
-                        hostedButtonId: "H6FFLWEXDYSK2",
-                      }).render("#paypal-container-H6FFLWEXDYSK2")
+                      function initPayPalButton() {
+                        if (window.paypal && paypal.HostedButtons) {
+                          paypal.HostedButtons({
+                            hostedButtonId: "H6FFLWEXDYSK2",
+                          }).render("#paypal-container-H6FFLWEXDYSK2");
+                        } else {
+                          setTimeout(initPayPalButton, 200);
+                        }
+                      }
+                      initPayPalButton();
                     </script>
                 </div>
             </div>
@@ -285,11 +293,6 @@
     <footer>
         <p>&copy; 2026 Urbania. Powered by Code.</p>
     </footer>
-
-    <!-- PayPal SDK Script (Engine) -->
-    <script 
-      src="https://www.paypal.com/sdk/js?client-id=BAAzUuDm08yPgTjtTiRyglVke-WtfnccvqWyYqrH00QA8oCu-YBT62LZP5HKBwfnksXVSshsavMzT2hU1M&components=hosted-buttons&enable-funding=venmo&currency=USD">
-    </script>
 
 </body>
 </html>
