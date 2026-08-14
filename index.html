@@ -72,7 +72,7 @@
         .product-price { font-size: 16px; color: #666666; font-weight: 500; } 
         
         /* Minimalist Selector */ 
-        .size-select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #e0e0e0; background: #ffffff; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; outline: none; cursor: pointer; appearance: none; -webkit-appearance: none; background-position: right 15px center; } 
+        .size-select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #e0e0e0; background: #ffffff; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; outline: none; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,"); background-repeat: no-repeat; background-position: right 15px center; } 
         .size-select:focus { border-color: #00A3E0; } 
         
         /* Premium Buy Button */ 
@@ -81,42 +81,6 @@
         
         /* Paypal Button Wrapper Styling */
         .paypal-button-wrapper { margin-top: auto; padding: 0 10px; width: 100%; min-height: 150px; }
-
-        /* Promo Code Box Styles */
-        .promo-box {
-            margin: 0 10px 15px 10px;
-            display: flex;
-            gap: 8px;
-        }
-        .promo-input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ccc;
-            font-size: 12px;
-            text-transform: uppercase;
-            outline: none;
-            letter-spacing: 1px;
-        }
-        .promo-btn {
-            background-color: #111111;
-            color: #ffffff;
-            border: none;
-            padding: 10px 15px;
-            font-size: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.2s;
-        }
-        .promo-btn:hover {
-            background-color: #333333;
-        }
-        .promo-msg {
-            margin: -5px 10px 15px 10px;
-            font-size: 11px;
-            font-weight: 600;
-        }
 
         /* Footer */ 
         footer { background: #ffffff; border-top: 1px solid #f0f0f0; text-align: center; padding: 40px 20px; font-size: 12px; letter-spacing: 1px; color: #999999; text-transform: uppercase; margin-top: 100px; }
@@ -305,33 +269,10 @@
                     <p>Eleva tu estilo con esta camiseta oversized confeccionada en algodón de alto gramaje (250 GSM). Con un lavado vintage estilo snow wash y un corte holgado, aporta una vibra urbana, desgastada y audaz a tu guardarropa. Un diseño exclusivo con el sello **Ponce 00731** llevado al siguiente nivel.</p>
                 </div>
 
-                <!-- Promo Code Box -->
-                <div class="promo-box">
-                    <input type="text" id="promo-code-input" class="promo-input" placeholder="Promo Code (Enter promo code)">
-                    <button type="button" class="promo-btn" onclick="applyPromoCode()">Apply</button>
-                </div>
-                <div id="promo-message" class="promo-msg"></div>
-
                 <!-- Safe PayPal Button Container -->
                 <div class="paypal-button-wrapper">
                     <div id="paypal-container-H6FFLWEXDYSK2"></div>
                     <script>
-                      function applyPromoCode() {
-                        const input = document.getElementById('promo-code-input').value.trim().toUpperCase();
-                        const msg = document.getElementById('promo-message');
-                        
-                        if (input === "MIPANA15") {
-                          msg.style.color = "#008000";
-                          msg.textContent = "✓ Code MIPANA15 Applied! Enter your 15% discount inside PayPal checkout.";
-                        } else if (input === "") {
-                          msg.style.color = "#E4002B";
-                          msg.textContent = "Please enter a valid code.";
-                        } else {
-                          msg.style.color = "#E4002B";
-                          msg.textContent = "Invalid promo code.";
-                        }
-                      }
-
                       function initPayPalButton() {
                         if (window.paypal && paypal.HostedButtons) {
                           paypal.HostedButtons({
@@ -352,20 +293,6 @@
     <footer>
         <p>&copy; 2026 Urbania. Powered by Code.</p>
     </footer>
-
-    <!-- Start of Tawk.to Script -->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6a6631f09b421a1d428469ab/1jufj65bg';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!-- End of Tawk.to Script -->
 
 </body>
 </html>
