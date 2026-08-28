@@ -13,6 +13,7 @@
     <style>
         /* Modern Minimalist Reset */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        html { scroll-behavior: smooth; }
         body { background-color: #ffffff; color: #111111; -webkit-font-smoothing: antialiased; padding-top: 38px; }
 
         /* Smooth Scrolling Announcement Ticker */
@@ -67,7 +68,7 @@
             top: 100%;
             left: 25px;
             background-color: #ffffff;
-            min-width: 200px;
+            min-width: 220px;
             box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
             border: 1px solid #f0f0f0;
             list-style: none;
@@ -95,12 +96,12 @@
         }
         
         /* Shop Section */ 
-        .shop-section { padding: 80px 5%; } 
-        .section-title { font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px; text-align: center; position: relative; } 
+        .shop-section { padding: 60px 5%; } 
+        .section-title { font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; text-align: center; position: relative; scroll-margin-top: 130px; } 
         .section-title::after { content: ''; display: block; width: 40px; height: 2px; background: #00A3E0; margin: 10px auto 0 auto; } 
         
         /* Grid Blueprint */ 
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; } 
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px; } 
         
         /* Product Card */ 
         .product-card { background: #ffffff; transition: opacity 0.3s ease; display: flex; flex-direction: column; justify-content: flex-end; } 
@@ -111,16 +112,35 @@
         .product-title { font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; } 
         .product-price { font-size: 16px; color: #666666; font-weight: 500; } 
         
-        /* Minimalist Selector */ 
-        .size-select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #e0e0e0; background: #ffffff; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; outline: none; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,"); background-repeat: no-repeat; background-position: right 15px center; } 
-        .size-select:focus { border-color: #00A3E0; } 
-        
         /* Premium Buy Button */ 
         .buy-btn { display: block; text-align: center; width: 100%; background: #E4002B; color: #ffffff; padding: 14px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background-color 0.2s ease; margin-top: auto; } 
         .buy-btn:hover { background: #b80022; } 
         
         /* Paypal Button Wrapper Styling */
         .paypal-button-wrapper { margin-top: auto; padding: 0 10px; width: 100%; min-height: 150px; }
+
+        /* Coming Soon Placeholders */
+        .coming-soon-card {
+            background: #f9f9f9;
+            border: 2px dashed #e0e0e0;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 60px;
+        }
+        .coming-soon-card h3 {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #111111;
+            margin-bottom: 10px;
+        }
+        .coming-soon-card p {
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
         /* Footer */ 
         footer { background: #ffffff; border-top: 1px solid #f0f0f0; text-align: center; padding: 40px 20px; font-size: 12px; letter-spacing: 1px; color: #999999; text-transform: uppercase; margin-top: 100px; }
@@ -180,11 +200,11 @@
             <div class="dropdown">
                 <a href="#shop" class="dropbtn">Shop ▼</a>
                 <ul class="dropdown-content">
-                    <li><a href="shop-hoodies.html">Hoodies</a></li>
-                    <li><a href="shop-tshirts.html">T-Shirts</a></li>
-                    <li><a href="shop-hats.html">Hats</a></li>
-                    <li><a href="shop-stickers.html">Stickers</a></li>
-                    <li><a href="shop-shevive.html">Shevive (Faith Merch)</a></li>
+                    <li><a href="#hoodies">Hoodies</a></li>
+                    <li><a href="#tshirts">T-Shirts</a></li>
+                    <li><a href="#hats">Hats</a></li>
+                    <li><a href="#stickers">Stickers</a></li>
+                    <li><a href="#shevive">Shevive (Faith Merch)</a></li>
                 </ul>
             </div>
         </div>
@@ -199,17 +219,16 @@
     </section>
 
     <section id="shop" class="shop-section">
-        <div class="section-title">The Collection</div>
         
+        <!-- HOODIES SECTION -->
+        <div id="hoodies" class="section-title">Hoodies</div>
         <div class="products-grid">
-            
            <!-- CARD 1: HOODIE REVOLUTION - 00716 EDITION -->
             <div class="product-card">
                 <div class="product-image">
                     <img id="main-product-img-716" src="Gemini_Generated_Image_1yk3lr1yk3lr1yk3.png" alt="Urbania hoodie 00716">
                 </div>
                 
-                <!-- MINI MOCKUP GALLERY FOR 00716 -->
                 <div class="product-gallery-thumbnails" style="display: flex; gap: 8px; justify-content: center; margin: -10px 0 20px 0; padding: 0 5px;">
                     <img src="Gemini_Generated_Image_1yk3lr1yk3lr1yk3.png" alt="00716 Front View" 
                          style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #111; cursor: pointer; border-radius: 4px;" 
@@ -239,7 +258,6 @@
                     <img id="main-product-img-731" src="Gemini_Generated_Image_ldx0cfldx0cfldx0.png" alt="Urbania hoodie 00731">
                 </div>
                 
-                <!-- MINI MOCKUP GALLERY FOR 00731 -->
                 <div class="product-gallery-thumbnails" style="display: flex; gap: 8px; justify-content: center; margin: -10px 0 20px 0; padding: 0 5px; flex-wrap: wrap;">
                     <img src="Gemini_Generated_Image_ldx0cfldx0cfldx0.png" alt="00731 View 1" 
                          style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #111; cursor: pointer; border-radius: 4px;" 
@@ -266,14 +284,17 @@
 
                 <a href="https://urbaniapr.printify.me/product/30211972" target="_blank" class="buy-btn">Select Size & Buy</a>
             </div>
+        </div>
 
-            <!-- CARD 3: SNOW WASHED OVERSIZED TEE - PONCE 00731 EDITION -->
+        <!-- T-SHIRTS SECTION -->
+        <div id="tshirts" class="section-title">T-Shirts</div>
+        <div class="products-grid">
+            <!-- CARD 3: SNOW WASHED OVERSIZED TEE -->
             <div class="product-card">
                 <div class="product-image">
                     <img id="main-product-img-snow-wash" src="Gemini_Generated_Image_12xojg12xojg12xo.png" alt="Snow Washed Oversized Tee Ponce 00731">
                 </div>
                 
-                <!-- MINI MOCKUP GALLERY FOR SNOW WASH TEE -->
                 <div class="product-gallery-thumbnails" style="display: flex; gap: 6px; justify-content: center; margin: -10px 0 20px 0; padding: 0 5px; flex-wrap: wrap;">
                     <img src="Gemini_Generated_Image_12xojg12xojg12xo.png" alt="Light Brown View 1" 
                          style="width: 42px; height: 42px; object-fit: cover; border: 1px solid #111; cursor: pointer; border-radius: 4px;" 
@@ -319,7 +340,6 @@
                     <p>Eleva tu estilo con esta camiseta oversized confeccionada en algodón de alto gramaje (250 GSM). Con un lavado vintage estilo snow wash y un corte holgado, aporta una vibra urbana, desgastada y audaz a tu guardarropa. Un diseño exclusivo con el sello **Ponce 00731** llevado al siguiente nivel.</p>
                 </div>
 
-                <!-- Safe PayPal Button Container -->
                 <div class="paypal-button-wrapper">
                     <div id="paypal-container-H6FFLWEXDYSK2"></div>
                     <script>
@@ -336,8 +356,29 @@
                     </script>
                 </div>
             </div>
-
         </div>
+
+        <!-- HATS SECTION -->
+        <div id="hats" class="section-title">Hats</div>
+        <div class="coming-soon-card">
+            <h3>Urbania Headwear Collection</h3>
+            <p>🧢 Coming Soon — Próximamente</p>
+        </div>
+
+        <!-- STICKERS SECTION -->
+        <div id="stickers" class="section-title">Stickers</div>
+        <div class="coming-soon-card">
+            <h3>Urbania Vinyl & Die-Cut Pack</h3>
+            <p>🏷️ Coming Soon — Próximamente</p>
+        </div>
+
+        <!-- SHEVIVE SECTION -->
+        <div id="shevive" class="section-title">Shevive (Faith Merch)</div>
+        <div class="coming-soon-card">
+            <h3>Shevive Faith & Urban Wear</h3>
+            <p>✨ Coming Soon — Próximamente</p>
+        </div>
+
     </section>
 
     <footer>
